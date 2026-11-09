@@ -1,0 +1,21 @@
+Error: base price cannot be negative.
+Order is full. Cannot add Cookie [P-02].
+
+Order #1001 - Ana Reyes (Student)
+  Iced Latte [B-01] Size: L                        120.00
+  Ensaymada [P-01] (Warmed)                        55.00
+  Chicken Adobo [M-01] Upsized, 1 side             142.00
+  Subtotal: 317.00
+  Student discount (10%): -31.70
+  TOTAL: 285.30
+  Loyalty points: 5
+
+Order #1002 - Ben Cruz
+  Hot Chocolate [B-02] Size: M                     95.00
+  Beef Tapa [M-02] Regular, 0 sides                130.00
+  Subtotal: 225.00
+  Voucher: -20.00
+  TOTAL: 205.00
+  Loyalty points: 4
+
+Default constructors demonstrated successfully.
