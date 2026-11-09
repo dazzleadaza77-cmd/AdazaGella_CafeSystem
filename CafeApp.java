@@ -1,21 +1,11 @@
-/**
- * Main driver for the Campus Cafe Ordering System.
- *
- * @author Dazzle Mc Kenzie Adaza and Anjo Gella
- * @version 1.0
- */
 public class CafeApp {
-    /**
-     * Creates sample customers and menu items, then prints two receipts.
-     * @param args command-line arguments (not used)
-     */
+ 
     public static void main(String[] args) {
-        // Demonstrate the three Customer constructor forms.
+       
         Customer defaultCustomer = new Customer();
         Customer namedCustomer = new Customer("Ben Cruz");
         Customer student = new Customer("Ana Reyes", true);
 
-        // Demonstrate default and parameterized constructors for menu subclasses.
         Beverage defaultDrink = new Beverage();
         defaultDrink.setName("Hot Chocolate");
         defaultDrink.setBasePrice(80);
@@ -28,7 +18,6 @@ public class CafeApp {
         Meal chickenAdobo = new Meal("Chicken Adobo", 110, "M-01", true, 1);
         Meal defaultMeal = new Meal();
 
-        // Demonstrate a setter rejecting invalid data.
         defaultDrink.setBasePrice(-5);
 
         Order order1 = new Order("1001", student);
