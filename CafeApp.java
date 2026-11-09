@@ -3,8 +3,8 @@ public class CafeApp {
     public static void main(String[] args) {
        
         Customer defaultCustomer = new Customer();
-        Customer namedCustomer = new Customer("Ben Cruz");
-        Customer student = new Customer("Ana Reyes", true);
+        Customer namedCustomer = new Customer("Dazzle Mc Kenzie Adaza");
+        Customer student = new Customer("Anjo Gella", true);
 
         Beverage defaultDrink = new Beverage();
         defaultDrink.setName("Hot Chocolate");
