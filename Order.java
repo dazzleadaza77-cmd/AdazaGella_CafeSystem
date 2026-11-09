@@ -1,9 +1,3 @@
-/**
- * Connects one customer with up to three menu items and prints a receipt.
- *
- * @author Dazzle Mc Kenzie Adaza and Anjo Gella
- * @version 1.0
- */
 public class Order {
     private Customer customer;
     private MenuItem item1;
@@ -13,11 +7,6 @@ public class Order {
     private String orderId;
     private boolean pointsAwarded;
 
-    /**
-     * Creates an order for a customer.
-     * @param orderId unique order identifier
-     * @param customer customer who placed the order
-     */
     public Order(String orderId, Customer customer) {
         this.orderId = orderId == null ? "N/A" : orderId;
         this.customer = customer == null ? new Customer() : customer;
@@ -25,11 +14,6 @@ public class Order {
         pointsAwarded = false;
     }
 
-    /**
-     * Places an item in the first empty slot.
-     * @param item menu item to add
-     * @return true when added successfully
-     */
     public boolean addItem(MenuItem item) {
         if (item == null) {
             System.out.println("Error: cannot add an empty item.");
@@ -44,7 +28,6 @@ public class Order {
         return true;
     }
 
-    /** @return sum of all non-null item prices */
     public double computeSubtotal() {
         double subtotal = 0;
         if (item1 != null) subtotal += item1.computePrice();
@@ -53,26 +36,19 @@ public class Order {
         return subtotal;
     }
 
-    /** @return subtotal after the student discount, if applicable */
     public double computeTotal() {
         double subtotal = computeSubtotal();
         if (customer.isStudent()) return subtotal - (subtotal * 0.10);
         else return subtotal;
     }
 
-    /**
-     * Applies a voucher after the student discount; total cannot be negative.
-     * @param voucher voucher amount to subtract
-     * @return final total
-     */
     public double computeTotal(double voucher) {
         double total = computeTotal();
         if (voucher > 0) total -= voucher;
         if (total < 0) total = 0;
         return total;
     }
-
-    /** Prints item details, totals, discount, and updated loyalty points. */
+  
     public void printReceipt() {
         System.out.println("\nOrder #" + orderId + " - " + customer.getName()
                 + (customer.isStudent() ? " (Student)" : ""));
@@ -91,11 +67,7 @@ public class Order {
         }
         System.out.println("  Loyalty points: " + customer.getLoyaltyPoints());
     }
-
-    /**
-     * Prints a receipt with a voucher applied.
-     * @param voucher voucher amount
-     */
+ 
     public void printReceipt(double voucher) {
         System.out.println("\nOrder #" + orderId + " - " + customer.getName()
                 + (customer.isStudent() ? " (Student)" : ""));
@@ -121,28 +93,23 @@ public class Order {
             System.out.printf("  %-48s %.2f%n", item.getDescription(), item.computePrice());
     }
 
-    /** @return customer associated with the order */
-    public Customer getCustomer() { return customer; }
+    public Customer getCustomer() { 
+        return customer; 
+    }
 
-    /**
-     * Replaces the customer when a non-null customer is supplied.
-     * @param customer new customer
-     */
     public void setCustomer(Customer customer) {
         if (customer != null) this.customer = customer;
         else System.out.println("Error: customer cannot be null.");
     }
 
-    /** @return number of items in the order */
-    public int getItemCount() { return itemCount; }
+    public int getItemCount() { 
+        return itemCount;
+    }
 
-    /** @return order identifier */
-    public String getOrderId() { return orderId; }
+    public String getOrderId() { 
+        return orderId;
+    }
 
-    /**
-     * Updates the order identifier when nonblank.
-     * @param orderId new order identifier
-     */
     public void setOrderId(String orderId) {
         if (orderId != null && !orderId.trim().isEmpty()) this.orderId = orderId;
         else System.out.println("Error: order ID cannot be empty.");
